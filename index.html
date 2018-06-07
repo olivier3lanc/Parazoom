@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Parazoom jQuery Plugin”</title>
+    <link href="css-compiled/normalize.min.css" rel="stylesheet">
+    <meta name="description" content="A jQuery plugin that adds cool mouse hover features on images.">
+
+    <!-- Framework + template -->
+    <link href="css-compiled/starter.css" rel="stylesheet">
+    <!-- <link href="css/lib/prism.css" rel="stylesheet"> -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 col-md-3 col-sm-3 col-xs-0">
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#home" class="link-nav brand">Parazoom</a></li>
+                    <li><a href="#get-started" class="link-nav">Get started</a></li>
+                    <li><a href="#examples" class="link-nav">Examples</a></li>
+                    <li><a href="#documentation" class="link-nav">Documentation</a></li>
+                </ul>
+                <ul class="hamburger">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </nav>
+            &nbsp;
+        </div><!--/col-3 MENU -->
+        <div class="col-10 col-md-9 col-sm-9">
+            <header id="home" class="smart-contrast">
+                <div class="main">
+                    <h1>Parazoom</h1>
+                    <p>A jQuery plugin that adds cool mouse hover features on images.</p>
+                    <p><img src="img/lion.jpg" alt="Lion" class="parazoom"></p>
+                    <p><a href="#get-started" class="btn btn-filled">get started</a>
+                </div>
+            </header>
+
+            <!-- Getting started -->
+            <article id="get-started" class="padded color-primary-contrast-max">
+                <div class="row text-center row-small">
+                    <div class="col-12">
+                        <h2>Get started</h2>
+                        <p><a href="dist/parazoom.min.js" class="btn btn-primary" download>Download</a></p>
+                        <pre class="line-numbers">
+                            <code class="language-markup">
+&lt;img src=&quot;your-image.jpg&quot; alt=&quot;Alt text&quot;&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Examples -->
+            <article id="examples" class="padded color-primary-contrast-max invert">
+                <div class="row row-small">
+                    <div class="col-12 text-center">
+                        <h2>Settings</h2>
+                        <p class="slide-description">List of all user parameters.</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row row-large">
+                    <div class="col-12">
+                        <table class="striped">
+                            <thead>
+                                <th>Variable</th>
+                                <th>Type</th>
+                                <th>Examples</th>
+                                <th>Description</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_color_primary</code></td>
+                                    <td data-label="Type">CSS color value</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">#30dfd9</code><br>
+                                        <code class="highlight-code">rgb(48, 223, 217)</code><br>
+                                        <code class="highlight-code">rgba(48, 223, 217, 0.5)</code><br>
+                                        <code class="highlight-code">hsl(178, 73%, 53%)</code>
+                                    </td>
+                                    <td data-label="Description">The main color set by the user</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_smart_contrast</code></td>
+                                    <td data-label="Type">Boolean</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">true</code> or <code class="highlight-code">false</code>
+                                    </td>
+                                    <td data-label="Description">Enable or disable smart contrast feature. This determines how behaves color contrast. How it works? Quikster calculates primary color luminance and computes contrasted colors accordingly.
+                                        <ul style="padding-left:0; list-style:none">
+                                            <li>
+                                                <code class="highlight-code">true</code>
+                                                <ul>
+                                                    <li>
+                                                        Luminance > 50%
+                                                        <ul>
+                                                            <li>Contrasted colors are darker</li>
+                                                            <li>Most contrasted color is black</li>
+                                                            <li>Accented contrasted colors are lighter</li>
+                                                            <li>Most accented contrasted color is white</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        Luminance =< 50%
+                                                        <ul>
+                                                            <li>Contrasted colors are lighter</li>
+                                                            <li>Most contrasted color is white</li>
+                                                            <li>Accented contrasted colors are darker</li>
+                                                            <li>Most accented contrasted color is black</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <code class="highlight-code">false</code>
+                                                <ul>
+                                                    <li>
+                                                        Luminance > 50%
+                                                        <ul>
+                                                            <li>Contrasted colors are lighter</li>
+                                                            <li>Most contrasted color is white</li>
+                                                            <li>Accented contrasted colors are darker</li>
+                                                            <li>Most accented contrasted color is black</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        Luminance =< 50%
+                                                        <ul>
+                                                            <li>Contrasted colors are darker</li>
+                                                            <li>Most contrasted color is black</li>
+                                                            <li>Accented contrasted colors are lighter</li>
+                                                            <li>Most accented contrasted color is white</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_font_family_default</code></td>
+                                    <td data-label="Type">CSS list value</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">Arial, sans-serif</code> <br>
+                                        <code class="highlight-code">"Times New Roman", serif</code>
+                                    </td>
+                                    <td data-label="Description">Web safe font list that can be used as is or as fallback for custom fonts.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_font_families</code></td>
+                                    <td data-label="Type">SASS map</td>
+                                    <td data-label="Examples" colspan="2">
+                                        Declarative SASS map where you set all your fonts. Learn more at <a href="#font-families">Font Families</a> section.
+                                        <pre class="line-numbers">
+                                            <code class="language-scss">
+                                                //SETTINGS EXAMPLE
+                                                $qtr_font_families: (
+                                                    //Local font
+                                                    customStringID: (
+                                                        type:       'local',
+                                                        name:       'Aaargh-webfont',
+                                                        path:       '../fonts/',
+                                                        fallback:   $qtr_font_family_default
+                                                    ),
+                                                    //Distant font
+                                                    2: (
+                                                        type:       'local',
+                                                        name:       'myDistantFontFile',
+                                                        path:       'http://www.example.com/fonts/',
+                                                        fallback:   $qtr_font_family_default
+                                                    ),
+                                                    //Google Font
+                                                    3: (
+                                                        type:       'google',
+                                                        name:       'Open Sans',
+                                                        weight:     '',
+                                                        fallback:   '"Times New Roman", Georgia'
+                                                    ),
+                                                    //Web safe font 1
+                                                    extra: (
+                                                        type:       'websafe',
+                                                        name:       'Courier'
+                                                    ),
+                                                    //Web safe font 2
+                                                    extra2: (
+                                                        type:       'websafe',
+                                                        name:       '"Comic Sans MS"'
+                                                    )
+                                                );
+                                            </code>
+                                        </pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_font_size_unit</code></td>
+                                    <td data-label="Type">CSS value</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">em</code> <br>
+                                        <code class="highlight-code">rem</code> <br>
+                                        <code class="highlight-code">px</code>
+                                    </td>
+                                    <td data-label="Description">Determines the font size unit (em, rem, px, etc)</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_font_size_source</code></td>
+                                    <td data-label="Type">Number</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">1.2</code> <br>
+                                        <code class="highlight-code">16</code>
+                                    </td>
+                                    <td data-label="Description">This is the default font size without any unit.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_font_size_largest</code></td>
+                                    <td data-label="Type">Number</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">6</code> <br>
+                                        <code class="highlight-code">72</code>
+                                    </td>
+                                    <td data-label="Description">This is the largest font size available in your project.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_font_size_smallest</code></td>
+                                    <td data-label="Type">Number</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">0.5</code> <br>
+                                        <code class="highlight-code">12</code>
+                                    </td data-label="Description">
+                                    <td>This is the smallest font size available in your project.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_screen_mini</code></td>
+                                    <td data-label="Type">CSS value</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">34em</code> <br>
+                                        <code class="highlight-code">28rem</code> <br>
+                                        <code class="highlight-code">320px</code>
+                                    </td>
+                                    <td data-label="Description">Media width breakpoint between extra-small and small devices. Quikster supports 5 screen widths: Extra-small, small, medium, large and extra-large. This is the break point between extra-small and small devices.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_screen_small</code></td>
+                                    <td data-label="Type">CSS value</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">48em</code> <br>
+                                        <code class="highlight-code">38rem</code> <br>
+                                        <code class="highlight-code">640px</code>
+                                    </td>
+                                    <td data-label="Description">Media width breakpoint between small and medium devices. Quikster supports 5 screen widths: Extra-small, small, medium, large and extra-large. This is the break point between small and medium devices.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_screen_medium</code></td>
+                                    <td data-label="Type">CSS value</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">62em</code> <br>
+                                        <code class="highlight-code">50rem</code> <br>
+                                        <code class="highlight-code">920px</code>
+                                    </td>
+                                    <td data-label="Description">Media width breakpoint between medium and large devices. Quikster supports 5 screen widths: Extra-small, small, medium, large and extra-large. This is the break point between medium and large devices.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_screen_large</code></td>
+                                    <td data-label="Type">CSS value</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">75em</code> <br>
+                                        <code class="highlight-code">60rem</code> <br>
+                                        <code class="highlight-code">1200px</code>
+                                    </td>
+                                    <td data-label="Description">Media width breakpoint between large and extra-large devices. Quikster supports 5 screen widths: Extra-small, small, medium, large and extra-large. This is the break point between large and extra-large devices.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variable"><code class="highlight-code">$qtr_transition_time</code></td>
+                                    <td data-label="Type">CSS value</td>
+                                    <td data-label="Examples">
+                                        <code class="highlight-code">300ms</code> <br>
+                                        <code class="highlight-code">0.5s</code>
+                                    </td>
+                                    <td data-label="Description">Set a default transition time for your project.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Documentation -->
+            <article id="documentation" class="color-primary-contrast-max">
+
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="row row-small padded">
+                            <div class="col-12">
+                                <h2>Automatic contrast</h2>
+                                <p class="slide-description">Always readable color combinations.</p>
+                                <p>Whatever primary color you set, Quikster automatically computes new colors according to luminance. Then, when combined, color pairs allow good readability.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 text-center">
+                        <span class="color color-primary"></span>
+                        <p class="color-text mgtop3dot0">Primary color</p>
+                        <code class="highlight-code">qtr-color()</code>
+                        <hr class="small">
+                        <div class="row">
+                            <div class="col-6 col-md-12 col-lg-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="smart-contrast accent padded">
+                                            <h4>Accentuated contrast</h4>
+                                            <p>To force color primary luminance</p>
+                                            <pre class="line-numbers">
+                                                <code class="language-html">
+                                                    Get darker if primary color luminance is dark.
+                                                    Get lighter if primary color luminance is light.
+                                                </code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-accent-max"></span>
+                                        <p class="color-text">Contrast accentuated 6/6(max)</p>
+                                        <code class="highlight-code">qtr-color(-6)</code>
+                                    </div>
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-accent-5"></span>
+                                        <p class="color-text">Contrast accentuated 5/6</p>
+                                        <code class="highlight-code">qtr-color(-5)</code>
+                                    </div>
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-accent-4"></span>
+                                        <p class="color-text">Contrast accentuated 4/6</p>
+                                        <code class="highlight-code">qtr-color(-4)</code>
+                                    </div>
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-accent-3"></span>
+                                        <p class="color-text">Contrast accentuated 3/6</p>
+                                        <code class="highlight-code">qtr-color(-3)</code>
+                                    </div>
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-accent-2"></span>
+                                        <p class="color-text">Contrast accentuated 2/6</p>
+                                        <code class="highlight-code">qtr-color(-2)</code>
+                                    </div>
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-accent-1"></span>
+                                        <p class="color-text">Contrast accentuated 1/6</p>
+                                        <code class="highlight-code">qtr-color(-1)</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-12 col-lg-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="smart-contrast padded">
+                                            <h4>Smart contrast</h4>
+                                            <p>For always readable color combinations</p>
+                                            <pre class="line-numbers">
+                                                <code class="language-html">
+                                                    Get darker if primary color luminance is light.
+                                                    Get lighter if primary color luminance is dark.
+                                                </code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-1"></span>
+                                        <p class="color-text">Smart contrast 1/6</p>
+                                        <code class="highlight-code">qtr-color(1)</code>
+                                    </div>
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-2"></span>
+                                        <p class="color-text">Smart contrast 2/6</p>
+                                        <code class="highlight-code">qtr-color(2)</code>
+                                    </div>
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-3"></span>
+                                        <p class="color-text">Smart contrast 3/6</p>
+                                        <code class="highlight-code">qtr-color(3)</code>
+                                    </div>
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-4"></span>
+                                        <p class="color-text">Smart contrast 4/6</p>
+                                        <code class="highlight-code">qtr-color(4)</code>
+                                    </div>
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-5"></span>
+                                        <p class="color-text">Smart contrast 5/6</p>
+                                        <code class="highlight-code">qtr-color(5)</code>
+                                    </div>
+                                    <div class="col-2 col-sm-4 col-xs-4 mgbot2dot0">
+                                        <span class="color color-primary-contrast-max"></span>
+                                        <p class="color-text">Smart contrast 6/6(max)</p>
+                                        <code class="highlight-code">qtr-color(6)</code>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-primary-contrast-max invert">
+                        <h3>Smart Contrast Max</h3>
+                        <p class="mgbot3dot0">The primary color and its computed smart contrasted colors allow the foreground to always keep a good readability in relation with the background. With current CSS, this text is always readable whatever color primary you set.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color();
+                                    background-color: qtr-color(6);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-primary-contrast-max">
+                        <h3>Smart Contrast Max</h3>
+                        <p class="mgbot3dot0">The primary color and its computed smart contrasted colors allow the foreground to always keep a good readability in relation with the background. With current CSS, this text is always readable whatever color primary you set.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(6);
+                                    background-color: qtr-color();
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-primary-contrast-1">
+                        <h3>Smart Contrast 1</h3>
+                        <p class="mgbot3dot0">First contrast level between text color and background color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(1);
+                                    background-color: qtr-color();
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-primary-contrast-1 invert">
+                        <h3>Smart Contrast 1</h3>
+                        <p class="mgbot3dot0">First contrast level between text color and background color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color();
+                                    background-color: qtr-color(1);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-primary-contrast-2">
+                        <h3>Smart Contrast 2</h3>
+                        <p class="mgbot3dot0">2/6 contrast level between text color and background color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(2);
+                                    background-color: qtr-color();
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-primary-contrast-2 invert">
+                        <h3>Smart Contrast 2</h3>
+                        <p class="mgbot3dot0">2/6 contrast level between text color and background color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color();
+                                    background-color: qtr-color(2);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-primary-contrast-3">
+                        <h3>Smart Contrast 3</h3>
+                        <p class="mgbot3dot0">3/6 contrast level between text color and background color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(3);
+                                    background-color: qtr-color();
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-primary-contrast-3 invert">
+                        <h3>Smart Contrast 3</h3>
+                        <p class="mgbot3dot0">3/6 contrast level between text color and background color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color();
+                                    background-color: qtr-color(3);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-primary-contrast-4">
+                        <h3>Smart Contrast 4</h3>
+                        <p class="mgbot3dot0">4/6 contrast level between text color and background color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(4);
+                                    background-color: qtr-color();
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-primary-contrast-4 invert">
+                        <h3>Smart Contrast 4</h3>
+                        <p class="mgbot3dot0">4/6 contrast level between text color and background color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color();
+                                    background-color: qtr-color(4);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-primary-contrast-5">
+                        <h3>Smart Contrast 5</h3>
+                        <p class="mgbot3dot0">5/6 contrast level between text color and background color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(5);
+                                    background-color: qtr-color();
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-primary-contrast-5 invert">
+                        <h3>Smart Contrast 5</h3>
+                        <p class="mgbot3dot0">5/6 contrast level between text color and background color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color();
+                                    background-color: qtr-color(5);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-primary-contrast-accent-max invert">
+                        <h3>Accentuated Contrast Max</h3>
+                        <p>In opposition to the smart contrast, accentuated colors accentuate the primary color luminance.</p>
+                        <ul class="mgbot3dot0">
+                            <li>If luminance is below 50%, accentuated colors are darkened.</li>
+                            <li>If luminance is above 50%, accentuated colors are lightened.</li>
+                        </ul>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                /*
+                                WARNING!
+                                ---
+                                Using accentuated mode (by disabling smart contrast)
+                                does not guarantee readability. According to your
+                                primary color luminance (near 100% or 0%), accentuated contrast color
+                                combinations with primary color may not assure a good readability
+                                */
+                                .myClass {
+                                    color: qtr-color();
+                                    background-color: qtr-color(-6);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-primary-contrast-accent-max">
+                        <h3>Accentuated Contrast Max</h3>
+                        <p>In opposition to the smart contrast, accentuated colors accentuate the primary color luminance.</p>
+                        <ul class="mgbot3dot0">
+                            <li>If luminance is below 50%, accentuated colors are darkened.</li>
+                            <li>If luminance is above 50%, accentuated colors are lightened.</li>
+                        </ul>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                /*
+                                WARNING!
+                                ---
+                                Using accentuated mode (by disabling smart contrast)
+                                does not guarantee readability. According to your
+                                primary color luminance (near 100% or 0%), accentuated contrast color
+                                combinations with primary color may not assure a good readability
+                                */
+                                .myClass {
+                                    color: qtr-color(-6);
+                                    background-color: qtr-color();
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-custom-1">
+                        <h3>Custom color 1</h3>
+                        <p class="mgbot3dot0">Quikster computes contrasted colors from a custom color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: red;
+                                    background-color: qtr-color(5,red);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-custom-1 invert">
+                        <h3>Custom color 1</h3>
+                        <p class="mgbot3dot0">Quikster computes contrasted colors from a custom color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(5,red);
+                                    background-color: red;
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-custom-2">
+                        <h3>Custom color 2</h3>
+                        <p class="mgbot3dot0">Quikster computes contrasted colors from a custom color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: #123456;
+                                    background-color: qtr-color(4,#123456);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-custom-2 invert">
+                        <h3>Custom color 2</h3>
+                        <p class="mgbot3dot0">Quikster computes contrasted colors from a custom color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(4,#123456);
+                                    background-color: #123456;
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-custom-3">
+                        <h3>Custom color 3</h3>
+                        <p class="mgbot3dot0">Quikster computes contrasted colors from a custom color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: rgba(#654321,.6);
+                                    background-color: qtr-color(5,rgba(#654321,.6));
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-custom-3 invert">
+                        <h3>Custom color 3</h3>
+                        <p class="mgbot3dot0">Quikster computes contrasted colors from a custom color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(5,rgba(#654321,.6));
+                                    background-color: rgba(#654321,.6);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-primary-triadic-1">
+                        <h3>Triadic 1</h3>
+                        <p class="mgbot3dot0">Quikster computes triadic colors from your primary color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color();
+                                    background-color: qtr-color(triadic1);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-primary-triadic-1 invert">
+                        <h3>Triadic 1</h3>
+                        <p class="mgbot3dot0">Quikster computes triadic colors from your primary color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(triadic1);
+                                    background-color: qtr-color();
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-primary-triadic-2">
+                        <h3>Triadic 2</h3>
+                        <p class="mgbot3dot0">Quikster computes triadic colors from your primary color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(triadic2);
+                                    background-color: qtr-color();
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-primary-triadic-2 invert">
+                        <h3>Triadic 2</h3>
+                        <p class="mgbot3dot0">Quikster computes triadic colors from your primary color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color();
+                                    background-color: qtr-color(triadic2);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-md-12 padded color-primary-complement">
+                        <h3>Complementary</h3>
+                        <p class="mgbot3dot0">Quikster computes complementary color from your primary color.</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color();
+                                    background-color: qtr-color(complement);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="col-6 col-md-12 padded color-primary-complement invert">
+                        <h3>Complementary</h3>
+                        <p class="mgbot3dot0">Quikster computes complementary color from your primary color</p>
+                        <pre class="line-numbers">
+                            <code class="language-scss">
+                                .myClass {
+                                    color: qtr-color(complement);
+                                    background-color: qtr-color();
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+            </article>
+
+
+
+            <!-- Footer -->
+            <footer class="padded color-primary-contrast-max invert">
+                <div class="row row-large">
+                    <div class="col-12">
+                        <nav>
+                            <ul>
+                                <li><a href="#home" class="link-footer brand">Quikster</a></li>
+                                <li><a href="#get-started" class="link-footer">Get started</a></li>
+                                <li><a href="#settings" class="link-footer">Settings</a></li>
+                                <li><a href="#automatic-contrast" class="link-footer">Automatic contrast</a></li>
+                                <li><a href="#font-families" class="link-footer">Font families</a></li>
+                                <li><a href="#font-sizes" class="link-footer">Font sizes</a></li>
+                                <li><a href="#mixins" class="link-footer">Mixins</a></li>
+                                <li><a href="#functions" class="link-footer">Functions</a></li>
+                                <li><a href="#extensions" class="link-footer">Extensions</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </footer>
+        </div><!--/col-9 MAIN -->
+    </div>
+
+
+
+    <script src="js/jquery.2.1.4.min.js"></script>
+    <script src="dist/parazoom.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/isInViewport.js"></script>
+    <script type="text/javascript">
+
+        jQuery(document).ready(function(){
+            jQuery('.parazoom').parazoom();
+            jQuery('header .palette').on('click', function(){
+                var file = jQuery(this).attr('data-file');
+                jQuery('#skin').attr('href','css/'+file);
+            });
+            jQuery('nav.navigation .hamburger').on('click',function(){
+                jQuery(this).toggleClass('on');
+                jQuery('nav.navigation').toggleClass('on');
+            });
+            jQuery('nav.navigation a').on('click',function(){
+                jQuery('nav.navigation, nav.navigation .hamburger').removeClass('on');
+            });
+            jQuery(window).on('resize scroll', function() {
+                var tocID = jQuery('article:in-viewport(100)').attr('id');
+                jQuery('nav.navigation a').removeClass('active');
+                jQuery('nav.navigation a[href="#'+tocID+'"]').addClass('active');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
