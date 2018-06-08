@@ -739,6 +739,7 @@ nav#toc {
     list-style: none;
     padding: 0em;
     position: sticky;
+    position: -webkit-sticky;
     top: 1em;
     overflow-y: auto;
     overflow-x: hidden;
