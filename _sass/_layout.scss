@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    &>header {
+        width: $sidebar-width+px;
+        box-sizing: border-box;
+        &>.wrapper {
+
+        }
+    }
+    &>main {
+        width: calc(100% - #{$sidebar-width}px);
+        min-height: 75vh;
+        padding: 4em 2em;
+        box-sizing: border-box;
+        &>.wrapper {
+            display: flex;
+            flex-flow: wrap;
+            &>article {
+                &.post {
+                    flex-grow: 1;
+                }
+                &>header,
+                &>.post-content {
+                    margin: auto;
+                    max-width: 42em;
+                }
+            }
+            &>.home {
+                margin: auto;
+                max-width: 42em;
+            }
+        }
+    }
+    &>footer {
+        width: 100%;
+        padding: 2em;
+        box-sizing: border-box;
+        &>.wrapper {
+
+        }
+    }
+    p {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    hr {
+        border: none;
+        border-top: 1px solid currentColor;
+        opacity: 0.1;
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+}

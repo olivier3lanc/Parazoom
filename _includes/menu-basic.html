@@ -1,0 +1,15 @@
+
+<ul class="pages active">
+{% assign sorted_pages = site.pages | sort:"order" %}
+{% for node in sorted_pages %}
+    {% if node.layout != 'search' and node.title != nil %}
+    <li class="item">
+        <a  href="{{ site.url }}{{ site.baseurl }}{{ node.url }}"
+            title="{{ node.description | escape }}"
+            class="link-page {% if page.title == node.title %}active{% endif %}">
+            {{ node.title | escape }}
+        </a>
+    </li>
+    {% endif %}
+{% endfor %}
+</ul>

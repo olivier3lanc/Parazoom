@@ -1,0 +1,22 @@
+<div class="breadcrumbs">
+    <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+            <a property="item" typeof="WebPage" href="{{ site.url }}{{ site.baseurl }}" class="link-breadcrumb">Home</a>
+        </li>
+{% for crumb in crumbs offset: 1 %}
+    {% if forloop.last %}
+        <li class="separator">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</li>
+    {% else %}
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+            <a  property="item"
+                typeof="WebPage"
+                href="{{ site.url }}{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' | replace:'without-plugin/','without-plugins/' }}{% endfor %}"
+                class="link-breadcrumb">
+                {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}
+    </ol>
+</div>

@@ -1,0 +1,62 @@
+body {
+    main {
+        a {
+            color: qtr-color();
+            transition: all 300ms;
+            border-bottom: 2px solid qtr-color();
+            font-weight: bold;
+            text-decoration: none;
+            &:hover {
+                color: qtr-color(-3);
+                border-bottom: 2px solid qtr-color(-3);
+            }
+            &.link-static-files {
+                border: none;
+            }
+            &.link-breadcrumb {
+                border: none;
+                font-weight: normal;
+                color: desaturate(qtr-color(2),100);
+                font-size: qtr-font-size(-2);
+                &:hover {
+                    color: desaturate(qtr-color(),100);
+                }
+            }
+            &.link-tag {
+                color: qtr-color(6);
+                background-color: desaturate(qtr-color(2),100);
+                font-size: qtr-font-size(-4);
+                text-transform: uppercase;
+                border-radius: 3px;
+                border: none;
+                padding: 0.3em 0.6em;
+                &:hover {
+                    background-color: desaturate(qtr-color(),100);
+                }
+            }
+        }
+    }
+    .sidebar {
+        a {
+            &.link-page {
+                color: qtr-color(6);
+                text-decoration: none;
+                display: block;
+                padding-bottom: 8px;
+            }
+            &.link-filter {
+                color: qtr-color(4);
+                text-decoration: none;
+                font-size: qtr-font-size(-3);
+                padding: 0;
+                display: block;
+                text-transform: uppercase;
+                border-bottom: 1px solid qtr-color(4);
+                &.active {
+                    color: qtr-color(6);
+                    border-color: qtr-color(6);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+---
+---
+
+@import 'quikster';
+
+$sidebar-width: 350;
+$sidebar-padding: 30;
+
+//General
+@import 'normalize';
+@import 'layout';
+@import 'fonts';
+
+//sidebar
+@import 'sidebar';
+@import 'footer';
+
+@import 'tables';
+
+@import 'links';
+@import 'lists';
+@import 'blockquotes';
+@import 'code';
+@import 'toc';
+@import 'meta';
+@import 'post-list';
+@import 'breadcrumb';
+@import 'tags';
+@import 'images';
+
+body {
+    background-color: qtr-color(6);
+    color: desaturate(qtr-color(),100);
+}

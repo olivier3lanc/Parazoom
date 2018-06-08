@@ -1,0 +1,17 @@
+body {
+    nav {
+        &.meta {
+            display: flex;
+            padding: 0.6em 1em;
+            background-color: desaturate(rgba(qtr-color(5),0.2),100);
+            border-left: 2px solid desaturate(qtr-color(5),100);
+        }
+
+    }
+    time {
+        font-size: qtr-font-size(-2);
+        color: desaturate(qtr-color(2),100);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+}

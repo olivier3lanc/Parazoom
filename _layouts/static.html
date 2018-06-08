@@ -1,0 +1,16 @@
+---
+layout: page
+---
+
+<div class="static-files">
+    {{ content }}
+    <p>
+{% for image in site.static_files %}
+    {% if image.path contains 'assets/' %}
+        <a href="{{ site.url }}{{ site.baseurl }}{{ image.path }}" class="link-static-files">
+            <img src="{{ site.url }}{{ site.baseurl }}{{ image.path }}" alt="{{ image.basename }}">
+        </a>
+    {% endif %}
+{% endfor %}
+    </p>
+</div>

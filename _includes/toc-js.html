@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        //TOC generation
+        jQuery('main .wrapper').eq(0).append(
+            '<nav id="toc">'+
+                '<ul>'+
+                    '<li>'+
+                        '<a href="#">'+
+                            jQuery('h1.post-title').text()+
+                        '</a>'+
+                    '</li>'+
+                '</ul>'+
+            '</nav>'
+        );
+        jQ_toc = jQuery('nav#toc').children('ul');
+        jQ_titles = jQuery('h1:not(.post-title),h2,h3,h4,h5,h6');
+        if(jQ_titles.length > 0){
+            jQuery('h1:not(.post-title),h2,h3,h4,h5,h6').each(function(){
+                var text = jQuery(this).text();
+                var id = jQuery(this).attr('id');
+                var tagName = jQuery(this).prop("tagName");
+                jQ_toc.append(
+                    '<li>'+
+                        '<a href="#'+id+'" class="'+tagName+'">'+text+'</a>'+
+                    '</li>'
+                );
+            });
+        }
+
+    });
+</script>

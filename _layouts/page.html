@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="post">
+
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+        <nav class="meta">
+            {% include breadcrumbs.html %}
+            {% include tags.html %}
+        </nav>
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+</article>
+
+{%- include toc-js.html -%}

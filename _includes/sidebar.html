@@ -1,0 +1,58 @@
+<header class="sidebar" role="banner">
+
+    <div class="wrapper">
+
+
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+        <p class="site-title">
+            <a rel="author" href="{{ "/" | relative_url }}">
+                {{ site.title | escape }}
+            </a>
+        </p>
+
+        <form action="{{ site.url }}{{ site.baseurl }}/search.html" method="get">
+            <label for="search-box"></label>
+            <input type="text" id="search-box" name="query">
+            <input type="submit" value="search">
+        </form>
+        
+        <nav>
+{%- if site.posts.size > 0 or site.collections.size > 0 or page_paths.size > 0 -%}
+    {%- if site.posts.size > 0 -%}
+            <ul class="posts active" data-name="{{ site.texts.posts }}">
+        {%- for post in site.posts -%}
+                <li class="item">
+                    {%- assign date_format = site.minima.date_format | default: "<span>%b</span> <span>%-d</span> <span>%Y</span>" -%}
+                    <a class="link-page" href="{{ post.url | relative_url }}">
+                        <span class="post-meta">{{ post.date | date: date_format }}</span>
+                        <span class="post-title">{{ post.title | escape }}</span>
+                    </a>
+                </li>
+        {%- endfor -%}
+            </ul>
+    {%- endif -%}
+
+
+    <!-- {%- if site.collections.size > 0 -%}
+            <ul class="collections active" data-name="{{ site.texts.collections }}">
+        {% for item in site.collections %}
+            {% if item.relative_directory != '_posts' %}
+                <li class="item">
+                    <a href="{{ site.url }}{{ site.baseurl }}/{{ item.label }}" class="link-page">
+                        {{ item.title }}
+                    </a>
+                </li>
+            {% endif  %}
+        {% endfor %}
+    {%- endif -%}
+            </ul> -->
+{%- endif -%}
+
+{%- if page_paths -%}
+    {% include menu-basic.html%}
+{%- endif -%}
+        </nav>
+
+    </div>
+</header>

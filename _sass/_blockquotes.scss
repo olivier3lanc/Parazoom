@@ -1,0 +1,12 @@
+body {
+    main {
+        blockquote {
+            color: desaturate(qtr-color(),100);
+            border-left: 10px solid desaturate(qtr-color(5),100);
+            padding: 1em;
+            font-style: italic;
+            margin-left: 0;
+            
+        }
+    }
+}

@@ -1,0 +1,25 @@
+body {
+    main {
+        .post-list {
+            list-style: none;
+            padding: 0;
+            margin: auto;
+
+            li {
+                span {
+                    &.post-meta {
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        font-size: qtr-font-size(-4);
+                    }
+                }
+                h3 {
+                    margin-top: 0;
+                }
+                &+li {
+                    margin-top: 2em;
+                }
+            }
+        }
+    }
+}

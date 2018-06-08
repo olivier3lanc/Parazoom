@@ -1,0 +1,29 @@
+body {
+    .breadcrumbs {
+        // background-color: rgba(qtr-color(5),0.3);
+        // padding: 5px 10px;
+        .breadcrumb {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li {
+                display: inline-block;
+                font-size: qtr-font-size(-2);
+                &:after {
+                    content: '/';
+                    padding-right: 0.3em;
+                    padding-left: 0.3em;
+                    color: desaturate(qtr-color(4),100);
+                    font-size: qtr-font-size(-3);
+                }
+                &:last-child {
+                    color: desaturate(qtr-color(3),100);
+                    font-style: italic;
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

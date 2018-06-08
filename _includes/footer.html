@@ -1,0 +1,24 @@
+<footer class="site-footer">
+    <!-- <data class="u-url" href="{{ " / " | relative_url }}"></data> -->
+    <div class="wrapper">
+        <div>
+            <p class="footer-heading">{{ site.title | escape }}</p>
+            <p>{{- site.description | escape -}}</p>
+        </div>
+        <div>
+            <ul class="contact-list">
+                <li class="p-name">
+{%- if site.author -%}
+                    {{ site.author | escape }}
+{%- else -%}
+                    {{ site.title | escape }}
+{%- endif -%}
+                </li>
+{%- if site.email -%}
+                <li>{{ site.email }}</li>
+{%- endif -%}
+                <!-- <li><a href="{{ "/feed.xml" | relative_url }}">via RSS</a></li> -->
+            </ul>
+        </div>
+    </div>
+</footer>

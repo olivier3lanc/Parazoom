@@ -1,0 +1,104 @@
+body {
+    font-family: qtr-font-family(2);
+    font-size: qtr-font-size();
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: qtr-font-family(1);
+        color: qtr-color();
+        margin-top: 0;
+        padding-top: 1em;
+        // &:first-child {
+        //     margin-top: 0;
+        // }
+    }
+    h1 {
+        font-size: qtr-font-size(6);
+        &.post-title {
+            border-bottom: 3px solid qtr-color();
+            padding-top: 0;
+            padding-bottom: 0.3em;
+        }
+        &+h2 {
+            padding-top: 0em;
+            // margin-top: 0;
+            &+h3 {
+                padding-top: 0em;
+                // margin-top: 0;
+                &+h4 {
+                    padding-top: 0em;
+                    // margin-top: 0;
+                    &+h5 {
+                        padding-top: 0em;
+                        // margin-top: 0;
+                        &+h6 {
+                            padding-top: 0em;
+                            // margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    h2 {
+        font-size: qtr-font-size(3);
+        &+h3 {
+            padding-top: 0em;
+            // margin-top: 0;
+            &+h4 {
+                padding-top: 0em;
+                // margin-top: 0;
+                &+h5 {
+                    padding-top: 0em;
+                    // margin-top: 0;
+                    &+h6 {
+                        padding-top: 0em;
+                        // margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    h3 {
+        font-size: qtr-font-size(2);
+        color: grey;
+        &+h4 {
+            padding-top: 0em;
+            // margin-top: 0;
+            &+h5 {
+                padding-top: 0em;
+                // margin-top: 0;
+                &+h6 {
+                    padding-top: 0em;
+                    // margin-top: 0;
+                }
+            }
+        }
+    }
+    h4 {
+        font-size: qtr-font-size(1);
+        color: grey;
+        &+h5 {
+            padding-top: 0em;
+            // margin-top: 0;
+            &+h6 {
+                padding-top: 0em;
+                // margin-top: 0;
+            }
+        }
+    }
+    h5 {
+        font-size: qtr-font-size();
+        color: grey;
+    }
+    h6 {
+        font-size: qtr-font-size();
+        color: grey;
+    }
+    p {
+        line-height: 1.6em;
+    }
+}

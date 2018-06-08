@@ -1,0 +1,7 @@
+body {
+    &>footer {
+        background-color: desaturate(qtr-color(5),100);
+        color: desaturate(qtr-color(2),100);
+        font-size: qtr-font-size(-2);
+    }
+}

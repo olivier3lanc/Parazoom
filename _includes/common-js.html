@@ -1,0 +1,70 @@
+<script type="text/javascript" src="{{ "/libraries/highlight.js/highlight.min.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/dist/parazoom.min.js" | relative_url }}"></script>
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+<!-- <script type="text/javascript" src="{{ "/libraries/highcharttable/jquery.highchartTable-min.js" | relative_url }}"></script> -->
+{% for js in site.static_files %}
+    {% if js.path contains 'assets/common-js/' %}
+<script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}{{ js.path }}"></script>
+    {% endif %}
+{% endfor %}
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        //Sidebar filter
+        jQ_sidebarFilterLinks = jQuery('.sidebar nav>ul.filter a.link-filter');
+        jQ_sidebarFilterLinks.on('click',function(e){
+            e.preventDefault();
+            var href = jQuery(this).attr('href');
+            var filter = href.replace('#','');
+            if(filter == 'all'){
+                jQuery('.sidebar nav>ul').addClass('active');
+            }else{
+                jQuery('.sidebar nav>ul.'+filter).addClass('active');
+                jQuery('.sidebar nav>ul:not(.'+filter+')').removeClass('active');
+            }
+            jQ_sidebarFilterLinks.removeClass('active');
+            jQuery(this).addClass('active');
+        });
+
+        //highlight js
+        jQuery('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+
+        //Responsive Tables
+        jQuery('main table td').each(function(){
+            var index = jQuery(this).index();
+            var title = jQuery(this)
+                            .closest('table')
+                            .find('th')
+                            .eq(index)
+                            .text();
+            jQuery(this).attr('data-label',title);
+            // console.log(title);
+        });
+
+        //Dynamic load for MathJax
+        if(jQuery('main [type="math/tex"]').length > 0){
+            jQuery.getScript("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+        }
+
+        //Dynamic load for highcharts
+        if (jQuery('table.highchart').length > 0){
+            jQuery.getScript("https://code.highcharts.com/highcharts.js")
+                .done(function( script, textStatus ){
+                    jQuery.getScript('{{ "/libraries/highcharttable/jquery.highchartTable-min.js" | relative_url }}')
+                        .done(function( script, textStatus ) {
+                            jQuery('table.highchart').each(function(){
+                                if(jQuery(this).attr('data-graph-container-before') === undefined){
+                                    jQuery(this).attr('data-graph-container-before', '1');
+                                }
+                                if(jQuery(this).attr('data-graph-type') === undefined){
+                                    jQuery(this).attr('data-graph-type', 'column');
+                                }
+                                jQuery(this).highchartTable();
+                            });
+                        });
+                });
+        }
+    });
+</script>
