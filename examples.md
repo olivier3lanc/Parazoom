@@ -90,9 +90,9 @@ Just add custom attribute with a number `data-prz-scale="0.5"` to set the transf
 ![Alt attribute text of the image](img/tarine.jpg){: .parazoom .default data-prz-scale="0.5"}
 
 ```
-<img    src="img/lion.jpg"
+<img    src="img/tarine.jpg"
         alt="Alt attribute text of the image"
-        data-prz-large-img="img/marmotte.jpg">
+        data-prz-scale="0.5">
 ```
 
 Or add `scale: '0.5'` in function call.
