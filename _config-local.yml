@@ -41,7 +41,7 @@ breadcrumbs:
 texts:
     collections: collections
     all: all
-    pages: 
+    pages:
     posts: posts
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
