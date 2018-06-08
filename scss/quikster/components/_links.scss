@@ -1,0 +1,72 @@
+a {
+    font-weight: bold;
+    transition: all $transition_time;
+    text-decoration: none;
+    &:link, &:active, &:focus, &:visited {
+        color: currentColor;
+    }
+    &:hover {
+        color: qtr-color(3);
+    }
+    &.link-sass {
+        vertical-align: middle;
+        position: relative;
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+        &>svg {
+            width: 2em;
+            vertical-align: sub;
+            &>path {
+                fill: currentColor;
+            }
+        }
+    }
+    &.link-nav {
+        display: block;
+        padding: 0.5rem 1rem;
+        letter-spacing: 0.05em;
+        font-size: qtr-font-size(-3);
+        border-bottom: 1px solid qtr-color(5);
+        color: qtr-color();
+        font-weight: normal;
+        &.brand {
+            font-family: qtr-font-family(1);
+            font-size: qtr-font-size();
+            letter-spacing: -0.03em;
+            padding-bottom: 0.5em;
+            &:hover {
+                background-color: transparent;
+                color: qtr-color(1);
+                border-bottom: 1px solid qtr-color(5);
+            }
+        }
+        &.active {
+            background-color: qtr-color();
+            color: qtr-color(6);
+            border-color: qtr-color();
+            &:hover {
+                color: qtr-color(5);
+            }
+        }
+        &:hover {
+            color: qtr-color(2);
+            border-color: qtr-color(5);
+        }
+    }
+    &.link-footer {
+        font-size: qtr-font-size(-6);
+        color: qtr-color(3);
+        font-weight: normal;
+        &.brand {
+            font-family: qtr-font-family(1);
+            font-size: qtr-font-size();
+            display: block;
+            margin-bottom: 0.5em;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 0.5em;
+        }
+        &:hover {
+            color: qtr-color();
+        }
+    }
+}

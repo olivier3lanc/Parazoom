@@ -1,0 +1,32 @@
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    @include qtr-screen-xl {
+        &.img-left {
+            float: left;
+            margin-right: 2em;
+            width: 50%;
+        }
+    }
+    @include qtr-screen-lg {
+        &.img-left {
+            float: left;
+            margin-right: 2em;
+            width: 50%;
+        }
+    }
+    @include qtr-screen-md {
+        &.img-left {
+            float: left;
+            margin-right: 2em;
+            width: 40%;
+        }
+    }
+}
+svg {
+    &.fill {
+        path {
+            fill: qtr-color();
+        }
+    }
+}

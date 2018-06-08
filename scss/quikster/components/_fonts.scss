@@ -1,0 +1,139 @@
+body {
+    @if($qtr_font_size_unit==em) {
+        line-height: qtr-font-size();
+    }@else {
+        line-height: 1.5em;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th {
+    font-family: qtr-font-family(1);
+    font-weight: normal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    @if($qtr_font_size_unit==em) {
+        line-height: qtr-font-size();
+    }@else {
+        line-height: 1.5em;
+    }
+}
+h1 { font-size: qtr-font-size(5); }
+h2 { font-size: qtr-font-size(4); }
+h3 { font-size: qtr-font-size(3); }
+h4 { font-size: qtr-font-size(2); }
+h5 { font-size: qtr-font-size(1); }
+h6 { font-size: qtr-font-size(); }
+
+button,
+cite,
+dd,
+div,
+dt,
+fieldset,
+figcaption,
+figure,
+input,
+li,
+p,
+span,
+table,
+td,
+textarea {
+    font-family: qtr-font-family(2);
+    font-weight: normal;
+    line-height: 1.5em;
+}
+
+p,
+span { font-size: qtr-font-size(); }
+
+dl,
+input,
+ol,
+select,
+textarea,
+ul,
+table,
+button {
+    @if($qtr_font_size_unit==em) {
+        font-size: $qtr_font_size_source * 13 +px;
+    }@else {
+        font-size: qtr-font-size();
+    }
+}
+
+@include qtr-screen(md) {
+    h1 { font-size: qtr-font-size(4); }
+    h2 { font-size: qtr-font-size(3); }
+    h3 { font-size: qtr-font-size(2); }
+    h4 { font-size: qtr-font-size(1); }
+    h5 { font-size: qtr-font-size(); }
+    h6 { font-size: qtr-font-size(-1); }
+    dl,
+    input,
+    ol,
+    p,
+    select,
+    textarea,
+    ul,
+    table,
+    button {
+        @if($qtr_font_size_unit==em) {
+            font-size: qtr-font-size(-2,raw) * 16 +px;
+        }@else {
+            font-size: qtr-font-size(-1);
+        }
+    }
+}
+@include qtr-screen(sm) {
+    h1 { font-size: qtr-font-size(3); }
+    h2 { font-size: qtr-font-size(2); }
+    h3 { font-size: qtr-font-size(1); }
+    h4 { font-size: qtr-font-size(); }
+    h5 { font-size: qtr-font-size(-1); }
+    h6 { font-size: qtr-font-size(-2); }
+    dl,
+    input,
+    ol,
+    p,
+    select,
+    textarea,
+    ul,
+    table,
+    button {
+        @if($qtr_font_size_unit==em) {
+            font-size: qtr-font-size(-3,raw) * 16 +px;
+        }@else {
+            font-size: qtr-font-size(-2);
+        }
+    }
+}
+@include qtr-screen(xs) {
+    h1 { font-size: qtr-font-size(2); }
+    h2 { font-size: qtr-font-size(1); }
+    h3 { font-size: qtr-font-size(); }
+    h4 { font-size: qtr-font-size(-1); }
+    h5 { font-size: qtr-font-size(-2); }
+    h6 { font-size: qtr-font-size(-3); }
+    dl,
+    input,
+    ol,
+    p,
+    select,
+    textarea,
+    ul,
+    table,
+    button {
+        @if($qtr_font_size_unit==em) {
+            font-size: qtr-font-size(-4,raw) * 16 +px;
+        }@else {
+            font-size: qtr-font-size(-3);
+        }
+    }
+}
