@@ -47,35 +47,37 @@ Here you can set the global parameters.
 ```
 //Change all default settings
 jQuery('img').parazoom({
-    //Global options
-    scale: '1.2',
-    transitionTime: '0.3s',
-    transitionTimeLeave: '1s',
-    opacity: '1',
-    opacityHover: '1',
-    overflow: 'hidden',
-    cursor: 'default',
-    customCursorIcon: '',
-    customCursorSize: '20px',
-    tilt: false,
-    tiltXamount: 10,
-    tiltYamount: 10,
-    text: false,
-    textClass: false,
-    textPosition: 'middle',
-    textAlignment: 'center',
-    textXParallax: 10,
-    textYParallax: 10,
-    textOpacity: 0,
-    textOpacityHover: 1,
-    //Callbacks
+    scale:                  '1.2',
+    transitionTime:         '0.3s',
+    transitionTimeLeave:    '1s',
+    opacity:                '1',
+    opacityHover:           '1',
+    overflow:               'hidden',
+    cursor:                 'default',
+    customCursorIcon:       '',
+    customCursorSize:       '20px',
+    tilt:                   false,
+    tiltXamount:            10,
+    tiltYamount:            10,
+    text:                   false,
+    textClass:              false,
+    textPosition:           'middle',
+    textAlignment:          'center',
+    textXParallax:          10,
+    textYParallax:          10,
+    textOpacity:            0,
+    textOpacityHover:       1,
     onHover: function(e){
+        //Your mouse hover callbacks
     },
-    onMove: function(){
+    onMove: function(e){
+        //Your mouse move callbacks
     },
-    onLeave: function(){
+    onLeave: function(e){
+        //Your mouse leave callbacks
     },
-    onClick: function(){
+    onClick: function(e){
+        //Your mouse click callbacks
     }
 });
 
@@ -90,7 +92,7 @@ jQuery('img').parazoom({
 Parazoom can be parametered for each element via data attributes: For example
 
 ```
-//Markup to set the scale of the element to 2
+<!-- Markup to set the scale of the element to 2 -->
 <img src="your-image.jpg" data-prz-scale="2">
 ```
 
@@ -119,10 +121,3 @@ Parazoom can be parametered for each element via data attributes: For example
 | `textYParallax`       | `data-prz-text-y-parallax`       |
 | `textOpacity`         | `data-prz-text-opacity`          |
 | `textOpacityHover`    | `data-prz-text-opacity-hover`    |
-
-
-## Methods
-
-| Options               | Default value     | Description |
-| --------------------- | ----------------- | ----------- |
-| `scale`               | `1.2`             | `float` or `string` Amount of transform scale |
