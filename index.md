@@ -1,4 +1,6 @@
 ---
 layout: home
 ---
-![Lion](img/lion.jpg){: .parazoom .start}
+![I am the alt text](img/lion.jpg){: .parazoom .start}
+
+<div class="backdrop"></div>

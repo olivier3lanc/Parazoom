@@ -1,16 +1,18 @@
 jQuery('.parazoom.start').parazoom({
     tilt: true,
+    text: true,
     customCursorIcon: 'img/maximize.svg',
     customCursorSize: '100px',
     overflow: 'visible',
-    onHover: function(){
-        console.log('hover');
+    onHover: function(e){
+        jQuery('.backdrop').addClass('active');
     },
-    onMove: function(){
-        console.log('move');
+    onMove: function(e){
+        console.log(e);
     },
-    onLeave: function(){
-        console.log('leave');
+    onLeave: function(e){
+        console.log(e);
+        jQuery('.backdrop').removeClass('active');
     },
     onClick: function(e){
         console.log(e);
