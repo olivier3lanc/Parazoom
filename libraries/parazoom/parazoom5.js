@@ -197,8 +197,9 @@
                                         //Display Parazoom container
                                         jQprzContainer
                                             .css({
-                                                'display': 'inline-block'
-                                                // 'height': jQuery(this).height()+'px'
+                                                'display': 'inline-block',
+                                                'height': jQuery(this).height()+'px',
+                                                'width': jQuery(this).width()+'px'
                                             })
                                             .find('.prz-overlay')
                                             .css({
