@@ -1,4 +1,19 @@
 jQuery('.parazoom.start').parazoom({
-    scale: 0.5
+    tilt: true,
+    customCursorIcon: 'img/maximize.svg',
+    customCursorSize: '100px',
+    overflow: 'visible',
+    onHover: function(){
+        console.log('hover');
+    },
+    onMove: function(){
+        console.log('move');
+    },
+    onLeave: function(){
+        console.log('leave');
+    },
+    onClick: function(e){
+        console.log(e);
+    }
 });
 jQuery('.parazoom.default').parazoom();
